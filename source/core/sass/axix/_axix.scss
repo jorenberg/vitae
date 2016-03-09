@@ -317,3 +317,22 @@ $browser-context: 16;
   
   @return $pixels / $context * 1em;
 }
+
+// ============================================
+// N. The @mixin directive for Text Shadow.
+// ============================================
+// The text-shadow property adds shadows to text.
+// It accepts a comma-separated list of shadows to be applied to the text and text-decorations of the element.
+// Usage:
+// 1. Each shadow is specified as an offset from the text, along with optional color and blur radius values.
+// 2. Multiple shadows are applied front-to-back, with the first-specified shadow on top.
+// 3. This property applies to both ::first-line and ::first-letter pseudo-elements.
+// Syntax:
+// offset-x | offset-y | blur-radius | color
+/// @param {Size} $x [2px] - X
+/// @param {Size} $y [2px] - Y
+/// @param {Size} $blur [2px] - Blur
+/// @param {Color} $color [rgba(0,0,0,.4)] - Color
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4)) {
+  text-shadow: $x $y $blur $color;
+}
