@@ -236,3 +236,11 @@
   background: $background;
   color: $color;
 }
+
+// ==========================================
+// G. The @mixin directive for Size (W & H)
+// ==========================================
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
