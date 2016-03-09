@@ -244,3 +244,12 @@
   width: $width;
   height: $height;
 }
+
+// ==========================================
+// H. CSS3 calc mixin.
+// ==========================================
+@mixin axix-calc($property, $value) {
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}: -moz-calc(#{$value});
+  #{$property}: calc(#{$value});
+}
