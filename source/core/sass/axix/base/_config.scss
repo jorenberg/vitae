@@ -18,3 +18,9 @@ $axix-base-line-height:                                          1.428571429 !de
 $axix-line-height-computed: floor(($axix-base-font-size * $axix-base-line-height)) !default; // ~20px
 // 1.3 Heading: <h1> to <h6>
 $axix-headings-font-weight:                                              600 !default;
+
+// 2. Colors ==//==
+$axix-brand-bg-color-hex:                                            #9BA2B0 !default;
+$axix-brand-bg-color-rgb:                                   rgb(155,162,176) !default;
+$axix-brand-color-hex:                                               #9BBB79 !default;
+$axix-brand-color-rgb:                                      rgb(155,187,121) !default;
