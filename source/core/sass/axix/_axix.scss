@@ -171,3 +171,9 @@
     height: 0;
   }
 }
+
+// ==========================================
+// B. The @include directive for font-face
+// ==========================================
+@include font-face("Palatino Linotype", font-files("fonts/palatino/PalatinoLinotype.ttf"));
+@include font-face("Open Sans", font-files("fonts/opensans/OpenSans-Regular.ttf", "fonts/opensans/OpenSans-Semibold.ttf"));
