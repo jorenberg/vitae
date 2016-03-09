@@ -24,3 +24,8 @@
 // Importing "AXIX®" through "@import" directive.
 // Advance eXpert Intelligent eXtreme.
 @import "axix/axix";
+
+// Scroll Bar for -webkit- engine.
+$axix-webkit-background-color:                  #4F4540 !default;
+$axix-webkit-scrollbar-thumb-color:             #B58418 !default;
+$axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
