@@ -33,3 +33,12 @@ $axix-brand-base-color-hex:                                          #F15E4A !de
 $axix-brand-base-color-rgb:                                   rgb(241,94,74) !default;
 $axix-base-white-color-hex:                                          #FFFFFF !default;
 $axix-base-white-color-rgb:                                 rgb(255,255,255) !default;
+
+// 3. Components ==//==
+$axix-display-blocktype:                                               block !default;
+$axix-display-inlinetype:                                       inline-block !default;
+$axix-position-abs:                                                 absolute !default;
+$axix-position-rel:                                                 relative !default;
+// 3.1 for Height and Width ==//==
+$axix-val-hundred:                                                      100% !default;
+$axix-val-eighty:                                                        80% !default;
