@@ -267,3 +267,15 @@
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
+
+// ==========================================
+// J. The @mixin directive for IE-7.
+// ==========================================
+// @Using: @content directive.
+@mixin apply-to-ie7 {
+  // IE7 hack from:-
+  // http://www.paulirish.com/2009/browser-specific-css-hacks/
+  *:first-child+html & {
+    @content;
+  }
+}
