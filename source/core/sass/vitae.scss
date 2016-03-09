@@ -29,3 +29,97 @@
 $axix-webkit-background-color:                  #4F4540 !default;
 $axix-webkit-scrollbar-thumb-color:             #B58418 !default;
 $axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
+
+// ==========================================
+// 1. The @mixin directive for AXIX Globals.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ==========================================
+@mixin axix-base-global-settings {
+  // 1.0 - normalize reset css.
+  // --------------------------
+  // @using: @include directive for custom - normalize.
+  @include -axix-normalize;
+  
+  // 1.1 - Universal Selector
+  // ------------------------
+  // An asterisk (*) is the universal selector for CSS.
+  // It matches a single element of any type.
+  /// Note: Omitting the asterisk with simple selectors has the same effect.
+  /// Set box-sizing globally to handle padding and border widths.
+  /// ----------------------------------------------------------------------
+  *,
+  *:before,
+  *:after {
+    // @using: @include directive for box-sizing.
+    @include box-sizing(border-box);
+    margin: 0;
+    padding: 0;
+  }
+  
+  // 1.2 - ::selection
+  // -----------------
+  ::-moz-selection {
+    // @using: @include directive for ::selection.
+    @include axix-selection(rgba(74,109,8,0.9), rgba(255,255,255,0.9));
+  }
+  ::selection {
+    // @using: @include directive for ::selection.
+    @include axix-selection(rgba(74,109,8,0.9), rgba(255,255,255,0.9));
+  }
+  
+  // 1.3 - Root element
+  // ------------------
+  html {
+    background: #9BA2B0;
+    background: rgb(155,162,176);
+    font-size: 14px;
+    @include box-sizing(inherit);
+    // Note: -webkit-tap-highlight-color is a non-standard CSS property that sets the color of the highlight,
+    // that appears over a link while it's being tapped to indicate to the user,
+    /// (1) that their tap is being successfully recognized, and
+    /// (2) which element they're tapping on.
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* for some Androids */
+    -webkit-tap-highlight-color: transparent;
+    // for webkit and IE.
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  // 1.4 - Device Width Fix
+  // ----------------------
+  // for Internet Explorer 10 in Windows 8 and Windows Phone 8.
+  @-webkit-viewport   { width: device-width; }
+  @-moz-viewport      { width: device-width; }
+  @-ms-viewport       { width: device-width; }
+  @-o-viewport        { width: device-width; }
+  @viewport           { width: device-width; }
+  
+  // 1.5 - Scroll Bar for -webkit- engine.
+  // -------------------------------------
+  $axix-webkit-background-color:            #4F4540 !default;
+  $axix-webkit-scrollbar-thumb-color:       #B58418 !default;
+  $axix-webkit-scrollbar-thumb-hover-color: #DAA520 !default;
+  
+  ::-webkit-scrollbar {
+    background: $axix-webkit-background-color;
+    width: 8px;
+    height: 32px;
+  }
+  
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $axix-webkit-background-color;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $axix-webkit-scrollbar-thumb-color;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: $axix-webkit-scrollbar-thumb-hover-color;
+  }
+}
