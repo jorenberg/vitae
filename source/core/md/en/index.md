@@ -6,3 +6,5 @@ upClass: navbar-tall
 downClass: navbar-short
 ---
 ## {{title}}
+
+> {{description}}
