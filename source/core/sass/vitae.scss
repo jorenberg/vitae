@@ -97,10 +97,6 @@ $axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
   
   // 1.5 - Scroll Bar for -webkit- engine.
   // -------------------------------------
-  $axix-webkit-background-color:            #4F4540 !default;
-  $axix-webkit-scrollbar-thumb-color:       #B58418 !default;
-  $axix-webkit-scrollbar-thumb-hover-color: #DAA520 !default;
-  
   ::-webkit-scrollbar {
     background: $axix-webkit-background-color;
     width: 8px;
