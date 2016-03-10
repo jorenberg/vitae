@@ -212,3 +212,63 @@ $axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
     }
   }
 }
+
+// ==========================================
+// 4. The @mixin directive for Header.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ==========================================
+@mixin axix-base-header-settings {
+  // 4.1 - Header Element.
+  // ---------------------
+  header {
+    position: $axix-position-rel;
+    text-align: center;
+    width: 100%;
+    > h1 {
+      color: #7F7F7F;
+      border-bottom: 1px solid #9BBB79;
+      font-size: 450%;
+      font-variant: normal;
+      line-height: 1.05;
+      margin: 0 0 .15em;
+      text-indent: 1.2em;
+    }
+    > h1 > span {
+      display: $axix-display-inlinetype;
+      font-size: 50%;
+      margin-left: -2.7em;
+      padding: 0 0 0 14px;
+      vertical-align: super;
+    }
+    > ul {
+      display: block;
+      margin-bottom: .5em;
+    }
+    > ul > li {
+      display: inline;
+      list-style: none;
+    }
+    > ul > li:before {
+      content: '●';
+      padding: 2px 1px;
+    }
+    > ul > li:first-child:before {
+      content: none;
+    }
+    > h1 > span,
+    > ul > li:before {
+      color: #9BBB79;
+    }
+  }
+  
+  // 4.2 - Heading: <h1>
+  // -------------------
+  h1 {
+    color: #9BBB79;
+    // @using: @include directive for text-shadow with @mixin prefix.
+    // text-shadow: $x $y $blur $color
+    @include prefix(text-shadow, 0px 1px 4px rgba(0, 0, 0, 0.4), (webkit, moz, ms, o));
+    // @using: @include directive for user-select.
+    @include user-select(none);
+  }
+}
