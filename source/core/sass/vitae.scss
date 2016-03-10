@@ -123,3 +123,63 @@ $axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
     background: $axix-webkit-scrollbar-thumb-hover-color;
   }
 }
+
+// ==========================================
+// 2. The @mixin directive for AXIX Body.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ==========================================
+@mixin axix-base-body-settings {
+  // 2.1 - Default body style(s).
+  // ----------------------------
+  body {
+    background-color: $axix-base-white-color-rgb;
+    color: #4C4C4C;
+    font: 100%/1.6 $axix-base-font-family;
+    font-style: normal;
+    margin: 1em auto;
+    padding: 6em 8%;
+    // @using: @include directive for size (width & height).
+    @include size(65em, 100%);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // Note: Now, add below `JavaScript` to allow :active styles to work in our CSS on a page in Mobile Safari:
+    // document.addEventListener("touchstart", function(){}, true);
+    /* for some Androids */
+    -webkit-tap-highlight-color: transparent;
+    // for effective typography.
+    @if ($axix-body-antialiased) {
+      /// @param {@value} - none | subpixel-antialiased | antialiased
+      -webkit-font-smoothing: antialiased;
+      /// only for Mac O/S.
+      -moz-osx-font-smoothing: grayscale;
+    }
+    // @using: @include directive for box-sizing.
+    @include box-sizing(border-box);
+    // @using: @include directive for hyphens.
+    @include hyphens(auto);
+    // @using: @include directive for box-shadow with @mixin prefix.
+    @include prefix(box-shadow, 1px 1px 5px 2px rgba(0, 0, 0, 0.3), (webkit, moz, ms, o));
+    // @using: @include directive for transition.
+    @include transition(font-size .5s $ease-in-quad);
+    // parent container.
+    > .axix-container {
+      // @using: @include directive for size (width & height).
+      @include size(100%, 100%);
+      position: relative;
+    }
+  }
+  
+  // 2.2 - Image properties.
+  // -----------------------
+  img {
+    // Get rid of gap under images by making them display: inline-block; by default.
+    display: $axix-display-inlinetype;
+    display: -moz-inline-stack;
+    // Grid defaults to get images and embeds to work properly.
+    height: auto;
+    width: auto;
+    max-width: $axix-val-hundred;
+    // for IE.
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+  }
+}
