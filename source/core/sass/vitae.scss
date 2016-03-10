@@ -179,3 +179,36 @@ $axix-webkit-scrollbar-thumb-hover-color:       #DAA520 !default;
     vertical-align: middle;
   }
 }
+
+// ==========================================
+// 3. The @mixin directive for Anchor.
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ==========================================
+@mixin axix-base-anchor-settings {
+  // 3.1 - Anchor Element.
+  // ---------------------
+  a {
+    color: $axix-brand-color-rgb;
+    color: $axix-brand-color-hex;
+    text-decoration: none;
+    // <br-width> || <br-style> || <color>
+    border-bottom: 1px dotted darken($axix-brand-color-hex, 07.9%);
+    // @using: @include directive for transition.
+    @include transition(color 380ms $ease-in-out-cubic);
+    &:hover,
+    &:focus {
+      color: darken($axix-brand-color-rgb, 04.9%);
+      color: darken($axix-brand-color-hex, 04.9%);
+      text-decoration: none;
+      // <br-width> || <br-style> || <color>
+      border-bottom: 1px solid darken($axix-brand-color-hex, 04.9%);
+    }
+    &:focus {
+      // Default
+      outline: thin dotted;
+      // WebKit
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+  }
+}
